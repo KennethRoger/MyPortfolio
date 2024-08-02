@@ -1144,4 +1144,10 @@ p.subtitle {
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+
+.errorMsg {
+	display: none;
+	color: red;
+	font-size: 0.8rem;
+}
 /* ===== End buttons ===== */

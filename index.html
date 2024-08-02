@@ -965,23 +965,27 @@
                         	<div class="col-sm-6">
                                 <div class="contact-form">
                                 	<h4>Write to me</h4>
-                                    <form role="form" action="https://api.web3forms.com/submit" method="POST">
+                                    <form role="form" onsubmit="return submitForm(event)" action="https://api.web3forms.com/submit" method="POST" target="_blank">
                                         <input type="hidden" name="access_key" value="b9f44eee-9ad8-4447-bfa1-df2435a511d9">
                                         <div class="form-group">
-                                            <input type="text" name="name" class="form-control input-lg" placeholder="Your Name" required>
+                                            <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Your Name">
+                                            <p class="errorMsg" id="nameError">Invalid name</p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control input-lg" placeholder="E-mail" required>
+                                            <input type="email" id="email" name="email" class="form-control input-lg" placeholder="E-mail">
+                                            <p class="errorMsg" id="emailError">Invalid Email</p>
                                         </div>
                                         <div class="form-group">
-                                            <input name="subject" type="text" class="form-control input-lg" placeholder="Subject" required>
+                                            <input name="subject" id="subject" type="text" class="form-control input-lg" placeholder="Subject">
+                                            <p class="errorMsg" id="subError"></p>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control input-lg" name="message" rows="5" placeholder="Message" required></textarea>
+                                            <textarea class="form-control input-lg" id="message" name="message" rows="5" placeholder="Message"></textarea>
+                                            <p class="errorMsg" id="msgError">Message is required</p>
                                         </div>
                                         <!-- Honeypot Spam Protection -->
                                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
+                                        <button type="submit" id="submitButton" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
                                     </form>
                                 </div>	
                             </div>
@@ -1070,6 +1074,9 @@
 		<!-- Theme JS -->
 		<script src="js/theme.js"></script>
 
+        <!-- Form JS -->
+
+        <script src="js/form-validation.js"></script>
     </body> 
         
             
